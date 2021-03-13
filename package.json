@@ -22,8 +22,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cp .config/local.env .env && react-scripts start",
+    "start:dev": "cp .config/dev.env .env && react-scripts start",
+    "start:prod": "cp .config/prod.env .env && react-scripts start",
+    "build": "cp .config/local.env .env && react-scripts build",
+    "build:dev": "cp .config/dev.env .env && react-scripts build",
+    "build:prod": "cp .config/prod.env .env && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
