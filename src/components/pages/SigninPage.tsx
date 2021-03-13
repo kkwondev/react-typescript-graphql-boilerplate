@@ -1,10 +1,21 @@
 
 import React from 'react';
-
+import LoginForm from '../component/auth/LoginForm';
+import useLogin from '../../hooks/useLogin';
 
 function SigninPage() {
+    const {
+        loginData,
+        loginRequired,
+        handleChangeData,
+        handleSubmit,
+    } = useLogin();
     return(
-        <div>로그인페이지</div>
+        <LoginForm 
+        input={loginData}
+        onChangeData={handleChangeData}
+        loginRequired={loginRequired} 
+        onSubmit={handleSubmit}/>    
     );
 }
 
