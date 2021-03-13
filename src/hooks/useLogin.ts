@@ -38,11 +38,8 @@ export default function useLogin() {
             alert('패스워드를 입력하세요.')
             return;
         }
-        console.log(loginData.email)
-        console.log(loginData.password)
         login({variables:{input:loginData}}).then((response) => {
             setLoginRequired(response.data?.login);
-            console.log(response.data?.login);
             // eslint-disable-next-line no-useless-concat
             localStorage.setItem("authorization","Bearer" + " " + response.data?.login as string);
             alert('로그인 완료');
