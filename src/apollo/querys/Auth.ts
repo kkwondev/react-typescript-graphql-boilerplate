@@ -16,3 +16,17 @@ export const REGISTER_REQUEST = gql`
         }
     }
 `
+
+export const LOGIN_CHECK = gql`
+    query user {
+        user {
+            email,
+            nickname,
+            phoneNumber,
+            rolesId,
+            roles{
+                name
+            }
+        }
+    }
+`;
