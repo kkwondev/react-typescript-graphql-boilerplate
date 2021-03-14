@@ -30,6 +30,7 @@ export default function useRegister() {
     const handleSubmit =(event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if(
+            // eslint-disable-next-line no-sequences
             registerData.email,
             registerData.password,
             registerData.passwordComfirm,
