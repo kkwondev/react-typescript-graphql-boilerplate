@@ -52,7 +52,7 @@ export default function useRegister() {
             }
         }}).then((response) => {
             alert('회원가입 완료')
-            console.log(response.data)
+            window.location.href='/signin'
         }).catch((e)=> {
             console.error(e);
             alert(e)
