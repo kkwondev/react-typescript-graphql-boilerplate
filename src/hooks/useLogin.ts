@@ -1,4 +1,4 @@
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import  { FormEvent, useState } from 'react';
 import { LOGIN_REQUEST } from '../apollo/querys/Auth';
 
@@ -41,12 +41,13 @@ export default function useLogin() {
         login({variables:{input:loginData}}).then((response) => {
             setLoginRequired(response.data?.login);
             // eslint-disable-next-line no-useless-concat
-            localStorage.setItem("authorization","Bearer" + " " + response.data?.login as string);
+            localStorage.setItem("Authorization","Bearer" + " " + response.data?.login as string);
             alert('로그인 완료');
             setLoginData({
                 email:'',
                 password:'',
             })
+            window.location.href = '/';
         }).catch((e) => {
             console.error(e)
             alert(e)

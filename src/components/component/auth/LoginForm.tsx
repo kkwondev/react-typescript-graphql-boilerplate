@@ -1,4 +1,5 @@
-import React, { ChangeEvent, FormEvent } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect } from 'react';
+import { RouteComponentProps, withRouter } from 'react-router';
 
 interface loginFormProps {
     input:{email:string,password:string},
@@ -7,8 +8,15 @@ interface loginFormProps {
     loginRequired:any;
 }
 
-function LoginForm({input,onChangeData,loginRequired,onSubmit}:loginFormProps) {
+function LoginForm({input,onChangeData,loginRequired,onSubmit,history}:loginFormProps & RouteComponentProps) {
     const {email,password} = input;
+    const currentUser = localStorage.getItem('Authorization')
+    useEffect(() => {
+        if (currentUser) {
+            history.push('/')
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     return(
         //TODO: 로그인폼 퍼블리싱 해야함
         <article className="formWrap">
@@ -33,4 +41,4 @@ function LoginForm({input,onChangeData,loginRequired,onSubmit}:loginFormProps) {
     );
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
