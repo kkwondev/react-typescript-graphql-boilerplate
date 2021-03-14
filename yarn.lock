@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@apollo/client@^3.3.11", "@apollo/client@latest":
+"@apollo/client@^3.3.11":
   "integrity" "sha512-54+D5FB6RJlQ+g37f432gaexnyvDsG5X6L9VO5kqN54HJlbF8hCf/8CXtAQEHCWodAwZhy6kOLp2RM96829q3A=="
   "resolved" "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.11.tgz"
   "version" "3.3.11"
@@ -20,13 +20,6 @@
     "ts-invariant" "^0.6.0"
     "tslib" "^1.10.0"
     "zen-observable" "^0.8.14"
-
-"@apollo/react-hooks@^4.0.0":
-  "integrity" "sha512-fCu0cbne3gbUl0QbA8X4L33iuuFVQbC5Jo2MIKRK8CyawR6PoxDpFdFA1kc6033ODZuZZ9Eo4RdeJFlFIIYcLA=="
-  "resolved" "https://registry.npmjs.org/@apollo/react-hooks/-/react-hooks-4.0.0.tgz"
-  "version" "4.0.0"
-  dependencies:
-    "@apollo/client" "latest"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.5.5":
   "integrity" "sha512-HV1Cm0Q3ZrpCR93tkWOYiuYIgLxZXZFVG2VgK+MBWjUqZTundupbfx2aXarXuw5Ko5aMcjtJgbSs4vUGBS5v6g=="
