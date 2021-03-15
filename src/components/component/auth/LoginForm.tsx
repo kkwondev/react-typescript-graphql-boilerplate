@@ -1,5 +1,8 @@
 import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
+import {CommonContent, CommonWrap} from '../../../styles/CommonStyles';
+import {FormWarp} from '../../../styles/AuthStyles';
+import { Link } from 'react-router-dom';
 
 interface loginFormProps {
     input:{email:string,password:string},
@@ -19,25 +22,34 @@ function LoginForm({input,onChangeData,loginRequired,onSubmit,history}:loginForm
     },[])
     return(
         //TODO: 로그인폼 퍼블리싱 해야함
-        <article className="formWrap">
-            <form onSubmit={onSubmit}>
-                <input 
-                type="email" 
-                name="email" 
-                value={email}
-                placeholder="EMAIL" 
-                onChange={e => onChangeData(e)}
-                />
-                <input 
-                type="password" 
-                name="password"
-                placeholder="PASSWORD" 
-                value={password}
-                onChange={e => onChangeData(e)}
-                />
-                <button type="submit">SIGN IN</button>
-            </form>
-        </article>
+        <CommonWrap>
+            <CommonContent>
+                <FormWarp>
+                    <h2>로그인</h2>
+                    <form onSubmit={onSubmit}>
+                        <input 
+                        type="email" 
+                        name="email" 
+                        value={email}
+                        placeholder="이메일" 
+                        onChange={e => onChangeData(e)}
+                        />
+                        <input
+                        className="loginPassword"
+                        type="password" 
+                        name="password"
+                        placeholder="비밀번호" 
+                        value={password}
+                        onChange={e => onChangeData(e)}
+                        />
+                        <button type="submit">로그인</button>
+                        <Link to="/signup">
+                            <button type="button" className="lastBtn">회원가입</button>
+                        </Link>
+                    </form>
+                </FormWarp>
+        </CommonContent>
+        </CommonWrap>
     );
 }
 
