@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { withRouter,RouteComponentProps } from 'react-router';
 import { LOGIN_CHECK } from '../../apollo/querys/Auth';
 import useLogout from '../../hooks/useLogout';
+import MyInfo from '../component/user/MyInfo'
 
 
 function MyPage({history}:RouteComponentProps) {
@@ -22,13 +23,7 @@ function MyPage({history}:RouteComponentProps) {
 
     if (!user) return null;
     return(
-        <>
-        <p><strong>이메일 :</strong> {user.email}</p>
-        <p><strong>닉네임 :</strong> {user.nickname}</p>
-        <p><strong>휴대폰번호 :</strong> {user.phoneNumber}</p>
-        <p><strong>등급 : </strong>{user.roles.name === 'ADMIN' ? '관리자' : '유저'}</p>
-        <button type="button" onClick={handleLogout}>로그아웃</button>
-        </>
+        <MyInfo onClick={handleLogout} user={user}/>
     );
 }
 
